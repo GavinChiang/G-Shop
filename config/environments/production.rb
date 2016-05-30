@@ -2,8 +2,12 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
    config.after_initialize do
-    Pay2go.integration_mode = :production
+    # Pay2go.integration_mode = :production
+    Pay2go.integration_mode = :development
   end
+
+  config.action_mailer.default_url_options = { host: 'https://aqueous-castle-86543.herokuapp.com' } # 你的 heroku app 網址
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
