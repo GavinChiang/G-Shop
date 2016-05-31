@@ -29,10 +29,6 @@ class Admin::OrdersController < AdminController
   	end
   end
 
-  # def show
-  # 	@product = Product.find(params[:id])
-  # end
-
   def create
     @product = Product.new(product_params)
 
@@ -51,4 +47,3 @@ class Admin::OrdersController < AdminController
     							                  photo_attributes: [:image, :id])
   end
 end
-
