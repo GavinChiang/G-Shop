@@ -1,6 +1,4 @@
-class Admin::ProductsController < ApplicationController
-  
-  class Admin::OrdersController < AdminController
+class Admin::OrdersController < AdminController
 
   def new
     @product = Product.new

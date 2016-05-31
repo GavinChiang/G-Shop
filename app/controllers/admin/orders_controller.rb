@@ -1,5 +1,4 @@
-class Admin::OrdersController < ApplicationController
-  class Admin::OrdersController < AdminController
+class Admin::OrdersController < AdminController
 
   def index
     @orders = Order.order("id DESC")
