@@ -6,6 +6,19 @@ Rails.application.configure do
     Pay2go.integration_mode = :development
   end
 
+  # for mailgun
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+        port:           587,
+        address:        "smtp.mailgun.org",
+        user_name:      ENV["mailgun_user"],
+        password:       ENV["mailgun_secret"],
+        domain:         "sandbox86c9d2ac4f174323982ce15313c7bba2.mailgun.org", # 你的 mailgun domain name
+        authentication: :plain,
+  }
+
+
   config.action_mailer.default_url_options = { host: 'https://aqueous-castle-86543.herokuapp.com' } # 你的 heroku app 網址
 
   # Code is not reloaded between requests.

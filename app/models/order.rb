@@ -7,7 +7,7 @@ class Order < ActiveRecord::Base
 
 	accepts_nested_attributes_for :info
 
-	 before_create :generate_token
+	include Tokenable
 
 	include AASM
 
@@ -40,10 +40,6 @@ class Order < ActiveRecord::Base
 	      transitions from: [:order_placed, :paid], to: :order_cancelled
 	    end
 	  end 
-
-	def generate_token
-	  self.token = SecureRandom.uuid
-	end
 
 	def set_payment_with!(method)
 	   self.update_columns(payment_method: method )
