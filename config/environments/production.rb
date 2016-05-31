@@ -19,7 +19,7 @@ Rails.application.configure do
   }
 
 
-  config.action_mailer.default_url_options = { host: 'https://aqueous-castle-86543.herokuapp.com' } # 你的 heroku app 網址
+  config.action_mailer.default_url_options = { host: 'gavin-onlineshop.herokuapp.com' } # 你的 heroku app 網址
 
   # Code is not reloaded between requests.
   config.cache_classes = true

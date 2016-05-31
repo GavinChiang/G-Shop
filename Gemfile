@@ -22,10 +22,7 @@ gem "pay2go"
 
 gem "figaro"
 
-group :production do
-  gem "pg"
-  gem "rails_12factor"
-end
+gem "fog"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
