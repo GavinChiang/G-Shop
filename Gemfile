@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem "devise"
 
+gem 'omniauth-facebook'
+
 gem "bootstrap-sass"
 
 gem "simple_form"
