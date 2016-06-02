@@ -26,6 +26,9 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [400, 400]
   end
 
+  version :indexforamt do
+    process resize_to_fit: [320, 150]
+  end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
