@@ -36,6 +36,6 @@ class ProductsController < ApplicationController
 
 
   def search_criteria(query_string)
-    { :title_or_description_or_email_or_location_cont => query_string }
+    { :title_or_content_cont => query_string }
   end
 end

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root "products#index"
 
+  resources :categories
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   namespace :admin do
     resources :products
