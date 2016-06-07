@@ -3,11 +3,11 @@
   <td width="80%">
     
 
-    <%= product.title %> 
+    <%= link_to(product.title, product_path(product.id)) %> 
    
   </td>
   <td width="5%">
    
   </td>
-  <td> <%= product.created_on.to_s(:short) %> </td>
+  <td> <%= product.created_at.to_s(:short) %> </td>
 </tr>
