@@ -21,8 +21,14 @@
           <div class="carousel-inner">
             
             <div class="item active">
-              <%= image_tag(@products[0].photo.image.slidepage.url, class: "slide-image") %>
+              <% if @products.empty? || !@products[0].photo.present? %>
+              <%= image_tag("http://placehold.it/800x300&text=No Pic", class: "slide-image") %>
+
+              <% else %>
+                            <%= image_tag(@products[0].photo.image.slidepage.url, class: "slide-image") %>
+              <% end %>
             </div>
+            <% if @products.count > 1 %>
             <% count = 0 %>
             <% @products[1..2].each do |p| %>
             
@@ -34,8 +40,19 @@
             <% if count < 2 %>
             <div class="item">
               <%= image_tag("http://placehold.it/800x300&text=No Pic", class: "slide-image") %>
+              </div>
               <% end %>
-            </div>
+
+              <% else %>
+              <div class="item">
+              <%= image_tag("http://placehold.it/800x300&text=No Pic", class: "slide-image") %>
+              </div>
+              <div class="item">
+              <%= image_tag("http://placehold.it/800x300&text=No Pic", class: "slide-image") %>
+              </div>
+
+              <% end %>
+            
             
             
             
