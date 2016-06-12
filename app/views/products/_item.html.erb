@@ -1,13 +1,10 @@
 <tr>
-
-  <td width="80%">
-    
-
-    <%= link_to(product.title, product_path(product.id)) %> 
-   
-  </td>
-  <td width="5%">
-   
-  </td>
-  <td> <%= product.created_at.to_s(:short) %> </td>
+	<td width="80%">
+		
+		<%= link_to(product.title, product_path(product.id)) %>	
+	</td>
+	<td width="5%">
+		
+	</td>
+	<td> <%= product.price %> </td>
 </tr>

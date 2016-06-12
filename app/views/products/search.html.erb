@@ -1,14 +1,10 @@
 <%= render :partial => "products/search_bar" %>
-
 <br>
 <div class="search-result">
-
-<table class="table table-borderd">
-     <%= render :partial => "products/item", :collection => @products, :as => :product %>
-
-   <%# @products.each do |product| %>
-   	 <%#= render "products/item", locals: { product: product } %>
-   <%# end %>
- </table>
-
+	<table class="table table-borderd">
+		<%= render :partial => "products/item", :collection => @products, :as => :product %>
+		<%# @products.each do |product| %>
+		<%#= render "products/item", locals: { product: product } %>
+		<%# end %>
+	</table>
 </div>

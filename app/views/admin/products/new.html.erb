@@ -11,6 +11,11 @@
   </div>
 
   <div class="group">
+  <% @categories = Category.all.map{|c| [c.name, c.id]} %>
+    <%= f.input :category_id, :collection => @categories, as: :radio_buttons, :checked => @categories[1] %>
+  </div>
+
+  <div class="group">
     <%= f.input :quantity %>
   </div>
 

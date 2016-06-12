@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_action :validate_search_key, :only => [:search]
 
   def index
+    @categories = Category.all
     @products = Product.all
   end
 
