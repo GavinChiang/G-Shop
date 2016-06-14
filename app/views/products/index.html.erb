@@ -2,10 +2,9 @@
   <div class="col-md-3">
     <p class="lead">G-Shop</p>
     <div class="list-group">
+
       <% @categories.each do |category| %>
-      <a href="#" class="list-group-item">
-        <%= category.name %>
-      </a>
+      <%= link_to (category.name), category_path(category.id), class: "list-group-item" %>
       <% end %>
     </div>
   </div>
@@ -23,9 +22,8 @@
             <div class="item active">
               <% if @products.empty? || !@products[0].photo.present? %>
               <%= image_tag("http://placehold.it/800x300&text=No Pic", class: "slide-image") %>
-
               <% else %>
-                            <%= image_tag(@products[0].photo.image.slidepage.url, class: "slide-image") %>
+              <%= image_tag(@products[0].photo.image.slidepage.url, class: "slide-image") %>
               <% end %>
             </div>
             <% if @products.count > 1 %>
@@ -40,21 +38,17 @@
             <% if count < 2 %>
             <div class="item">
               <%= image_tag("http://placehold.it/800x300&text=No Pic", class: "slide-image") %>
-              </div>
-              <% end %>
-
-              <% else %>
-              <div class="item">
+            </div>
+            <% end %>
+            <% else %>
+            <div class="item">
               <%= image_tag("http://placehold.it/800x300&text=No Pic", class: "slide-image") %>
-              </div>
-              <div class="item">
+            </div>
+            <div class="item">
               <%= image_tag("http://placehold.it/800x300&text=No Pic", class: "slide-image") %>
-              </div>
-
-              <% end %>
-            
-            
-            
+            </div>
+            <% end %>
+            </div>
             
             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
               <span class="glyphicon glyphicon-chevron-left"></span>
@@ -71,15 +65,15 @@
         <div class="col-sm-4 col-lg-4 col-md-4">
           <div class="thumbnail">
             <% if product.photo.present? %>
-            <%= image_tag(product.photo.image.thumb.url, class: "indexformat") %>
+            <%= image_tag(product.photo.image.indexforamt.url) %>
             <% else %>
-            <%= image_tag("http://placehold.it/320x150&text=No Pic", class: "indexformat") %>
+            <%= image_tag("http://placehold.it/320x150&text=No Pic") %>
             <% end %>
             <div class="caption">
               <%= link_to product_path(product) do %>
               <h4><%= product.title %></h4>
               <% end %>
-              <h4><%= product.price %></h4><br>
+              <h4 class="pull-right" > <%= product.price %></h4><br>
               
               <%= truncate(product.description, :length => 50) %>
             </div>
