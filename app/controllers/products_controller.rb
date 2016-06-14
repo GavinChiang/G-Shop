@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :validate_search_key, :only => [:search]
 
   def index
-    @categories = Category.all
+    @categories = Category.order("id asc")
     @products = Product.all
   end
 
