@@ -58,6 +58,11 @@
         </div>
       </div>
     </div>
+
+    
+    <%= render :partial => "products/search_bar" %>
+    <br>
+    <br>
     
     <div class="row">
       <% @products.each do |product| %>
@@ -90,9 +95,8 @@
       </div>
       <% end %>
     </div>
-    <br>
-    <%= render :partial => "products/search_bar" %>
-    <br>
+
+    
     <div class="container">
       <hr>
       <!-- Footer -->
